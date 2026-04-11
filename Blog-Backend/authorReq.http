@@ -1,0 +1,59 @@
+###read
+GET http://localhost:6677/author-api/articles
+
+ ###registration
+POST http://localhost:6677/common-api/users
+Content-Type: application/json
+
+{
+    "firstName":"Hexus",
+    "lastName":"maid",
+    "email":"maidhexa98@gmail.com",
+    "password":"maidservices98",
+    "role":"author",
+    "profileImageUrl":"hamilton.jpg"
+}
+
+####author login
+POST http://localhost:6677/common-api/users/login
+Content-Type: application/json
+
+{
+    "email":"laidnexa98@gmail.com",
+    "password":"laidservices98"
+}
+
+###article upload
+POST http://localhost:6677/author-api/articles
+Content-Type: application/json
+
+{
+    "author":"69b3ac5382710e2b1fe9ac93",
+    "title":"F1 by laid",
+    "category":"Sports",
+    "content":"Lewis Hamilton Is GOAT."
+}
+
+###article update
+PUT http://localhost:6677/author-api/articles
+Content-Type: application/json
+
+{
+    "articleId":"69b3dc0d7c380791c562c41a",
+    "title":"F1",
+    "category":"Sports",
+    "content":"Lewis Hamilton Is GOAT.8-time world champion."
+}
+
+
+###author logout
+GET http://localhost:6677/common-api/users/logout
+
+###patch
+PATCH http://localhost:6677/author-api/articles
+Content-Type: application/json
+
+{
+    "articleId":"69b3dc0d7c380791c562c41a",
+    "isArticleActive": false
+}

@@ -1,0 +1,50 @@
+###read
+GET http://localhost:6677/common-api/users
+
+###registration
+POST http://localhost:6677/common-api/users
+Content-Type: application/json
+
+{
+    "firstName":"Lexusss",
+    "lastName":"Hamilton",
+    "email":"lexuslalala123@gmail.com",
+    "password":"lexus123344",
+    "role":"USER",
+    "profileImageUrl":"hamilton.jpg"
+}
+
+###login
+POST http://localhost:6677/common-api/users/login
+Content-Type: application/json
+
+{
+    "email":"lexusla123@gmail.com",
+    "password":"lexusla12345"
+}
+
+###logout
+GET http://localhost:6677/common-api/users/logout
+
+
+
+###Read articles of all authors
+GET http://localhost:6677/user-api/articles
+
+###Add comment to an article
+PUT http://localhost:6677/user-api/articles
+Content-Type: application/json
+
+{
+    "articleId":"69b3dc0d7c380791c562c41a",
+    "comment":"FORREALLLLL."
+}
+
+###update password
+PUT http://localhost:6677/common-api/users/password
+Content-Type: application/json
+
+{
+    "currentPassword":"lexusla12345",
+    "newPassword":"lexusla12345"
+}

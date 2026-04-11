@@ -1,0 +1,32 @@
+###login
+POST http://localhost:6677/common-api/users/login
+Content-Type: application/json
+
+{
+    "email":"admin@gmail.com",
+    "password":"admin1234@"
+}
+
+###read users
+GET http://localhost:6677/admin-api/users/user
+
+###read articles
+GET http://localhost:6677/admin-api/articles/article
+
+###update user status
+PATCH http://localhost:6677/admin-api/users
+Content-Type: application/json
+
+{
+    "userId":"69b2c69fd413f84551f3c57b",
+    "isUserActive":true
+}
+
+###update article status
+PATCH http://localhost:6677/admin-api/articles
+Content-Type: application/json
+
+{
+    "articleId":"69b3dc0d7c380791c562c41a",
+    "isArticleActive":true
+}
