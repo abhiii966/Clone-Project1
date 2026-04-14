@@ -28,7 +28,7 @@ function UserProfile() {
       setLoading(true);
       try {
         //read articles of all authors
-        let res=await axios.get("http://localhost:6677/user-api/articles",{withCredentials:true})
+        let res=await axios.get("https://clone-project01-cvraljpgd-abhiii966s-projects.vercel.app/user-api/articles",{withCredentials:true})
         //update articles state
         if(res.status===200){
           setArticles((await res).data.payload)
