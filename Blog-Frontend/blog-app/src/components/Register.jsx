@@ -50,7 +50,7 @@ function Register() {
       //start loading
       setLoading(true);
       //make http post req to create user in backend (and deal with loading and error states accordingly)
-      const res = await axios.post("http://localhost:6677/common-api/users", formData,{withCredentials:true});
+      const res = await axios.post("https://two4eg105j32-project1.onrender.com/common-api/users", formData,{withCredentials:true});
       //auto login and navigate to home on successful registration
       if(res.status===201){
         await login({ email: userObj.email, password: userObj.password });
