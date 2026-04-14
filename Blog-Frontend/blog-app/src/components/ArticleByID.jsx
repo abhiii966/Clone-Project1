@@ -51,7 +51,7 @@ function ArticleByID() {
       setLoading(true);
 
       try {
-        const res = await axios.get(`http://localhost:6677/user-api/article/${id}`, { withCredentials: true });
+        const res = await axios.get(`https://two4eg105j32-project1.onrender.com/user-api/article/${id}`, { withCredentials: true });
 
         setArticle(res.data.payload);
       } catch (err) {
@@ -81,7 +81,7 @@ function ArticleByID() {
 
     try {
       const res = await axios.patch(
-        "http://localhost:6677/author-api/articles",
+        "https://two4eg105j32-project1.onrender.com/author-api/articles",
         { articleId: article._id, isArticleActive: newStatus },
         { withCredentials: true },
       );
@@ -114,7 +114,7 @@ function ArticleByID() {
     //add artcileId
     commentObj.articleId = article._id;
     console.log(commentObj);
-    let res = await axios.put("http://localhost:6677/user-api/articles", commentObj, { withCredentials: true });
+    let res = await axios.put("https://two4eg105j32-project1.onrender.com/user-api/articles", commentObj, { withCredentials: true });
     if (res.status === 201) {
       toast.success(res.data.message);
       setArticle(res.data.payload);
@@ -126,7 +126,7 @@ function ArticleByID() {
   const deleteComment = async (commentId) => {
     if (!window.confirm("Delete this comment?")) return
     const res = await axios.delete(
-        `http://localhost:6677/author-api/articles/${article._id}/comments/${commentId}`,
+        `https://two4eg105j32-project1.onrender.com/author-api/articles/${article._id}/comments/${commentId}`,
         { withCredentials: true }
     )
     if (res.status === 200) {
