@@ -11,7 +11,7 @@ config()
 const app = exp()
 //body parser
 app.use(cors({
-    origin:['http://localhost:5173'],
+    origin:['https://clone-project01.vercel.app'],
     credentials:true
 }))
 app.use(exp.json())
