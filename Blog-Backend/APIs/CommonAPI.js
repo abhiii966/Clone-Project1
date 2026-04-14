@@ -11,6 +11,7 @@ export const commonApp=exp.Router()
 
 //route for register
 commonApp.post("/users",upload.single("profileImageUrl"),async(req,res)=>{
+    try{
     let allowedRoles=['USER','AUTHOR']
     //get user from body
     const newUser=req.body
@@ -38,7 +39,13 @@ commonApp.post("/users",upload.single("profileImageUrl"),async(req,res)=>{
     console.log(result)
     //response
     res.status(201).json({message:"Registration successful."})
-})
+}
+    catch(err) {  
+    console.error("Registration error:", err)
+    res.status(500).json({ error: err.message })
+  }
+}
+              )
 
 commonApp.get("/users",verifyToken("admin"),async(req,res)=>{
     //get the data from db
