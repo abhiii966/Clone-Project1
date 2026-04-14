@@ -10,7 +10,7 @@ function UserList() {
     const getUsers = async () => {
       try {
         setLoading(true);
-        const res = await axios.get("http://localhost:6677/admin-api/users/user", {
+        const res = await axios.get("https://clone-project01-cvraljpgd-abhiii966s-projects.vercel.app/admin-api/users/user", {
           withCredentials: true,
         });
         if (res.status === 200) {
